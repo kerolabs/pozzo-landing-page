@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terms and Conditions | Pozzo</title>
+  <meta name="description" content="Terms and conditions for the Pozzo website and waitlist.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#FFF8F6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1B110E" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32.png?v=2">
+  <link rel="shortcut icon" type="image/png" href="./assets/img/favicon-32.png?v=2">
+  <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png?v=2">
+  <link rel="preload" href="./assets/fonts/plus-jakarta-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/plus-jakarta-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./assets/css/app.css">
+  <script>
+    (() => {
+      const root = document.documentElement;
+      root.classList.add("js");
+      try {
+        const savedTheme = localStorage.getItem("pozzo-theme");
+        if (savedTheme === "light" || savedTheme === "dark") {
+          root.setAttribute("data-theme", savedTheme);
+        }
+      } catch {}
+    })();
+  </script>
+  <script src="./js/app.js" defer></script>
+</head>
+<body data-page="terms">
+  <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>
+    <symbol id="i-light_mode" viewBox="0 0 24 24"><path d="M12 9c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3m0-2c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></symbol>
+    <symbol id="i-dark-mode" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></symbol>
+  </svg>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <header class="app-bar" data-app-bar data-scrolled="false">
+    <div class="container app-bar__inner">
+      <a class="brand" href="./index.html" aria-label="Pozzo">
+        <img class="brand__mark" src="./assets/img/logo.svg" width="40" height="40" alt="">
+        <span class="brand__word">Pozzo</span>
+      </a>
+
+      <div class="app-bar__menu" id="site-menu" data-menu data-open="false">
+        <nav class="primary-nav" data-i18n-aria-label="nav.label" aria-label="Main navigation">
+          <ul>
+            <li><a href="./index.html#how" data-i18n="nav.how">How it works</a></li>
+            <li><a href="./index.html#features" data-i18n="nav.features">Features</a></li>
+            <li><a href="./index.html#team" data-i18n="nav.team">Team</a></li>
+            <li><a href="./index.html#contact" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="app-bar__tools">
+          <div class="lang-switch" role="group" data-i18n-aria-label="nav.language" aria-label="Language">
+            <a href="#" data-lang="en" lang="en-US" aria-current="true">EN</a>
+            <a href="#" data-lang="es" lang="es-419">ES</a>
+          </div>
+
+          <button type="button" class="icon-btn theme-toggle" data-theme-toggle data-state="light" aria-label="Theme">
+            <svg class="icon theme-toggle__icon theme-toggle__icon--light" aria-hidden="true"><use href="#i-light_mode"></use></svg>
+            <svg class="icon theme-toggle__icon theme-toggle__icon--dark" aria-hidden="true"><use href="#i-dark-mode"></use></svg>
+          </button>
+        </div>
+      </div>
+
+      <a class="btn btn-filled app-bar__cta" href="./index.html#join">
+        <span class="cta-full" data-i18n="cta.join">Join the waitlist</span>
+        <span class="cta-short" data-i18n="cta.joinShort">Waitlist</span>
+      </a>
+
+      <button type="button" class="icon-btn menu-btn" data-menu-toggle aria-expanded="false" aria-controls="site-menu" data-i18n-aria-label="nav.menu" aria-label="Menu">
+        <svg class="icon menu-btn__open" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon menu-btn__close" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+
+    <article class="container legal" aria-labelledby="legal-title">
+      <h1 id="legal-title" data-i18n="terms.title">Terms and Conditions</h1>
+
+      <p class="legal__updated" data-i18n-template="legal.updated" data-date-en="October 1, 2026" data-date-es="1 de octubre de 2026">
+        Last updated: October 1, 2026
+      </p>
+
+      <section class="legal__section" aria-labelledby="terms-s1">
+        <h2 id="terms-s1" data-i18n="terms.s1.title">About this site</h2>
+        <p data-i18n="terms.s1.text">This website presents Pozzo, a student project developed by Kerolabs at Universidad Peruana de Ciencias Aplicadas (UPC). It is informational: it describes the app and lets you join a waitlist. The app is not published yet.</p>
+      </section>
+
+      <section class="legal__section" aria-labelledby="terms-s2">
+        <h2 id="terms-s2" data-i18n="terms.s2.title">What this site offers</h2>
+        <p data-i18n="terms.s2.text">You can read about Pozzo and leave your name and an email or mobile number to receive one notice when the app is available. Nothing else is sold or offered here.</p>
+      </section>
+
+      <section class="legal__section" aria-labelledby="terms-s3">
+        <h2 id="terms-s3" data-i18n="terms.s3.title">Pozzo does not handle money</h2>
+        <p data-i18n="terms.s3.text">Pozzo is designed to keep the record of a savings group: contributions, receipts and turns. It does not hold, receive, transfer or guarantee funds. Members pay each other directly. Kerolabs does not take a percentage of what a group saves.</p>
+      </section>
+
+      <section class="legal__section" aria-labelledby="terms-s4">
+        <h2 id="terms-s4" data-i18n="terms.s4.title">No warranty</h2>
+        <p data-i18n="terms.s4.text">The site is provided as is, as part of a student project. We do not guarantee that it will always be available or free of errors, or that the app will be released on a given date.</p>
+      </section>
+
+      <section class="legal__section" aria-labelledby="terms-s5">
+        <h2 id="terms-s5" data-i18n="terms.s5.title">Intellectual property</h2>
+        <p data-i18n="terms.s5.text">The Pozzo name, logo, texts, designs and app screens belong to Kerolabs, except where another owner is stated. For example, the Plus Jakarta Sans font is used under the SIL Open Font License. You may not copy or reuse our material without written permission.</p>
+      </section>
+
+      <section class="legal__section" aria-labelledby="terms-s6">
+        <h2 id="terms-s6" data-i18n="terms.s6.title">Changes</h2>
+        <p data-i18n="terms.s6.text">We may update these terms. The date at the top shows the latest version. If you keep using the site after a change, you accept the new version.</p>
+      </section>
+
+      <section class="legal__section" aria-labelledby="terms-s7">
+        <h2 id="terms-s7" data-i18n="terms.s7.title">Applicable law</h2>
+        <p data-i18n="terms.s7.text">These terms are governed by the laws of Peru. Any dispute is subject to the competent courts of Peru.</p>
+      </section>
+
+      <section class="legal__section" aria-labelledby="terms-s8">
+        <h2 id="terms-s8" data-i18n="terms.s8.title">Contact</h2>
+        <p data-i18n-template="terms.s8.text" data-email="hello@kerolabs.example">Questions about these terms: hello@kerolabs.example.</p>
+      </section>
+
+      <p class="legal__link">
+        <a href="./privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+      </p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="brand" href="./index.html" aria-label="Pozzo">
+          <img class="brand__mark" src="./assets/img/logo.svg" width="40" height="40" alt="">
+          <span class="brand__word">Pozzo</span>
+        </a>
+
+        <p class="site-footer__rights">
+          © <span data-year></span> Kerolabs.
+          <span data-i18n="footer.rights">Pozzo is a student project developed at UPC.</span>
+        </p>
+      </div>
+
+      <nav class="footer-nav">
+        <p class="footer-nav__title" data-i18n="footer.explore">Explore</p>
+        <ul>
+          <li><a href="./index.html#how" data-i18n="nav.how">How it works</a></li>
+          <li><a href="./index.html#features" data-i18n="nav.features">Features</a></li>
+          <li><a href="./index.html#team" data-i18n="nav.team">Team</a></li>
+          <li><a href="./index.html#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav">
+        <p class="footer-nav__title" data-i18n="footer.legal">Legal</p>
+        <ul>
+          <li><a href="./terms.html" data-i18n="footer.terms">Terms and Conditions</a></li>
+          <li><a href="./privacy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-nav footer-nav--wide" role="group" data-i18n-aria-label="nav.language" aria-label="Language">
+        <p class="footer-nav__title" data-i18n="nav.language">Language</p>
+        <ul>
+          <li><a href="#" data-lang="en" lang="en-US" data-i18n="nav.language.en">English</a></li>
+          <li><a href="#" data-lang="es" lang="es-419" data-i18n="nav.language.es">Español</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="site-footer__bottom">
+        <a class="btn btn-text" href="#top">
+          <span data-i18n="footer.top">Back to top</span>
+          <svg class="icon icon--up" aria-hidden="true"><use href="#i-arrow"></use></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
