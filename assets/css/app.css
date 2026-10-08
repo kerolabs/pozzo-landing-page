@@ -419,8 +419,15 @@ h3 { font-size: 1.375rem; line-height: 1.75rem; font-weight: 600; letter-spacing
   text-decoration: none;
 }
 .brand:hover { text-decoration: none; }
-.brand__mark { width: 32px; height: 32px; flex: none; }
-.brand__word { font-size: 1.375rem; line-height: 1; font-weight: 700; letter-spacing: -0.02em; }
+.brand__logo { display: block; width: auto; height: 32px; flex: none; }
+/* The logo follows the theme, set by the system or by the toggle, like the screens of the app. */
+.brand__logo--dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .brand__logo--light { display: none; }
+  :root:not([data-theme="light"]) .brand__logo--dark { display: block; }
+}
+:root[data-theme="dark"] .brand__logo--light { display: none; }
+:root[data-theme="dark"] .brand__logo--dark { display: block; }
 .app-bar__cta { flex: none; padding: 0 16px; }
 .app-bar__cta .cta-full { display: none; }
 .menu-btn__close { display: none; }
