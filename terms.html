@@ -29,6 +29,9 @@
   <script src="./js/app.js" defer></script>
 </head>
 <body data-page="terms">
+  <!-- ====================================================================== -->
+  <!-- SVG Icons Sprite                                                       -->
+  <!-- ====================================================================== -->
   <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>
@@ -38,6 +41,9 @@
   </svg>
   <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
+  <!-- ====================================================================== -->
+  <!-- Header / Navigation                                                    -->
+  <!-- ====================================================================== -->
   <header class="app-bar" data-app-bar data-scrolled="false">
     <div class="container app-bar__inner">
       <a class="brand" href="./index.html" aria-label="Pozzo">
@@ -79,8 +85,15 @@
       </button>
     </div>
   </header>
+
+  <!-- ====================================================================== -->
+  <!-- Main Content                                                           -->
+  <!-- ====================================================================== -->
   <main id="main" tabindex="-1">
 
+    <!-- ==================================================================== -->
+    <!-- Terms and Conditions Article                                         -->
+    <!-- ==================================================================== -->
     <article class="container legal" aria-labelledby="legal-title">
       <h1 id="legal-title" data-i18n="terms.title">Terms and Conditions</h1>
 
@@ -88,51 +101,64 @@
         Last updated: October 1, 2026
       </p>
 
+      <!-- Section 1: General Information / About this site -->
       <section class="legal__section" aria-labelledby="terms-s1">
         <h2 id="terms-s1" data-i18n="terms.s1.title">About this site</h2>
         <p data-i18n="terms.s1.text">This website presents Pozzo, a student project developed by Kerolabs at Universidad Peruana de Ciencias Aplicadas (UPC). It is informational: it describes the app and lets you join a waitlist. The app is not published yet.</p>
       </section>
 
+      <!-- Section 2: Services / What this site offers -->
       <section class="legal__section" aria-labelledby="terms-s2">
         <h2 id="terms-s2" data-i18n="terms.s2.title">What this site offers</h2>
         <p data-i18n="terms.s2.text">You can read about Pozzo and leave your name and an email or mobile number to receive one notice when the app is available. Nothing else is sold or offered here.</p>
       </section>
 
+      <!-- Section 3: Financial Disclaimer / Pozzo does not handle money -->
       <section class="legal__section" aria-labelledby="terms-s3">
         <h2 id="terms-s3" data-i18n="terms.s3.title">Pozzo does not handle money</h2>
         <p data-i18n="terms.s3.text">Pozzo is designed to keep the record of a savings group: contributions, receipts and turns. It does not hold, receive, transfer or guarantee funds. Members pay each other directly. Kerolabs does not take a percentage of what a group saves.</p>
       </section>
 
+      <!-- Section 4: Warranty Disclaimer / No warranty -->
       <section class="legal__section" aria-labelledby="terms-s4">
         <h2 id="terms-s4" data-i18n="terms.s4.title">No warranty</h2>
         <p data-i18n="terms.s4.text">The site is provided as is, as part of a student project. We do not guarantee that it will always be available or free of errors, or that the app will be released on a given date.</p>
       </section>
 
+      <!-- Section 5: Intellectual Property -->
       <section class="legal__section" aria-labelledby="terms-s5">
         <h2 id="terms-s5" data-i18n="terms.s5.title">Intellectual property</h2>
         <p data-i18n="terms.s5.text">The Pozzo name, logo, texts, designs and app screens belong to Kerolabs, except where another owner is stated. For example, the Plus Jakarta Sans font is used under the SIL Open Font License. You may not copy or reuse our material without written permission.</p>
       </section>
 
+      <!-- Section 6: Modification of Terms -->
       <section class="legal__section" aria-labelledby="terms-s6">
         <h2 id="terms-s6" data-i18n="terms.s6.title">Changes</h2>
         <p data-i18n="terms.s6.text">We may update these terms. The date at the top shows the latest version. If you keep using the site after a change, you accept the new version.</p>
       </section>
 
+      <!-- Section 7: Governing Law and Jurisdiction -->
       <section class="legal__section" aria-labelledby="terms-s7">
         <h2 id="terms-s7" data-i18n="terms.s7.title">Applicable law</h2>
         <p data-i18n="terms.s7.text">These terms are governed by the laws of Peru. Any dispute is subject to the competent courts of Peru.</p>
       </section>
 
+      <!-- Section 8: Contact Information -->
       <section class="legal__section" aria-labelledby="terms-s8">
         <h2 id="terms-s8" data-i18n="terms.s8.title">Contact</h2>
         <p data-i18n-template="terms.s8.text" data-email="hello@kerolabs.example">Questions about these terms: hello@kerolabs.example.</p>
       </section>
 
+      <!-- Cross-reference link to Privacy Policy -->
       <p class="legal__link">
         <a href="./privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
       </p>
     </article>
   </main>
+
+  <!-- ====================================================================== -->
+  <!-- Footer Section                                                         -->
+  <!-- ====================================================================== -->
   <footer class="site-footer">
     <div class="container site-footer__grid">
       <div class="site-footer__brand">

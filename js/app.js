@@ -4,14 +4,27 @@
   const doc = document;
   const root = doc.documentElement;
 
+  /**
+   * Selects a single DOM element matching the CSS selector.
+   * @param {string} selector - CSS selector to match.
+   * @param {ParentNode} [scope=doc] - Scope element to search within.
+   * @returns {Element|null} The matching element or null if not found.
+   */
   const $ = (selector, scope = doc) => scope.querySelector(selector);
+
+  /**
+   * Selects all DOM elements matching the CSS selector as an array.
+   * @param {string} selector - CSS selector to match.
+   * @param {ParentNode} [scope=doc] - Scope element to search within.
+   * @returns {Element[]} Array of matching elements.
+   */
   const $$ = (selector, scope = doc) => [...scope.querySelectorAll(selector)];
 
-  // Keys used to remember the visitor's choices between visits.
+  // Keys used to remember the visitor's choices between visits in localStorage.
   const LANG_KEY = "pozzo-lang";
   const THEME_KEY = "pozzo-theme";
 
-  // Supported languages: the dictionary file and the value set on <html lang>.
+  // Supported languages: configuration mapping to dictionary files and HTML lang attributes.
   const languages = {
     en: {
       file: "./i18n/EN.json",
@@ -26,18 +39,33 @@
   let translations = {};
   let currentLanguage = "en";
 
-  // Returns the translated text for a key, or the fallback when it is missing.
+  /**
+   * Returns the translated text for a key, or the fallback when it is missing.
+   * @param {string} key - Translation dictionary key.
+   * @param {string} [fallback=""] - Fallback string if key is not found.
+   * @returns {string} The localized string or fallback.
+   */
   const t = (key, fallback = "") => {
     return translations[key] ?? fallback;
   };
 
-  // Replaces {placeholders} in a translated string with the given values.
+  /**
+   * Replaces {placeholders} in a translated string with the given values.
+   * @param {string} text - Template text containing {key} tokens.
+   * @param {Record<string, string>} [values={}] - Key-value map of replacement values.
+   * @returns {string} Interpolated text.
+   */
   const interpolate = (text, values = {}) => {
     return text.replace(/\{(\w+)\}/g, (_, key) => {
       return values[key] ?? `{${key}}`;
     });
   };
 
+  /**
+   * Renders the waitlist consent checkbox label with interactive links
+   * to the Terms and Conditions and Privacy Policy pages.
+   * @param {HTMLElement} element - Label container element to populate.
+   */
   const renderConsent = (element) => {
     const template = t(
       "join.consent",
@@ -79,6 +107,11 @@
     });
   };
 
+  /**
+   * Iterates through all DOM elements with internationalization attributes
+   * and updates their textContent, ARIA labels, alt text, page titles,
+   * and meta tags based on the active dictionary.
+   */
   const translatePage = () => {
     $$("[data-i18n]").forEach((element) => {
       const key = element.dataset.i18n;
@@ -188,6 +221,12 @@
     }
   };
 
+  /**
+   * Asynchronously fetches the translation dictionary JSON for the requested
+   * language, updates application state and localStorage, and triggers a full DOM translation.
+   * @param {string} lang - Target language code ('en' or 'es').
+   * @returns {Promise<void>}
+   */
   const setLanguage = async (lang) => {
     if (!languages[lang]) {
       lang = "en";
@@ -215,6 +254,7 @@
     }
   };
 
+  // Attach click event listeners to language selector links/buttons.
   $$("[data-lang]").forEach((button) => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
@@ -222,6 +262,11 @@
     });
   });
 
+  /**
+   * Resolves the initial language preference by checking localStorage first,
+   * then falling back to browser navigator.language ('es' or 'en').
+   * @returns {string} Detected language code ('en' or 'es').
+   */
   const getInitialLanguage = () => {
     try {
       const savedLanguage = localStorage.getItem(LANG_KEY);
@@ -236,6 +281,11 @@
       : "en";
   };
 
+  /**
+   * Resolves the initial theme by checking localStorage first, then falling
+   * back to the system prefers-color-scheme media query.
+   * @returns {string} Detected theme mode ('dark' or 'light').
+   */
   const getInitialTheme = () => {
     try {
       const saved = localStorage.getItem(THEME_KEY);
@@ -250,10 +300,14 @@
       : "light";
   };
 
-  // Theme: saved choice first, then the system preference.
+  // Theme initialization: saved choice first, then system preference.
   const themeButton = $("[data-theme-toggle]");
   let theme = getInitialTheme();
 
+  /**
+   * Applies the current theme mode to the root <html> element, updates
+   * the toggle button's state and accessibility label, and persists to localStorage.
+   */
   const applyTheme = () => {
     root.setAttribute("data-theme", theme);
 
@@ -275,6 +329,7 @@
 
   applyTheme();
 
+  // Attach click listener to toggle between light and dark themes.
   if (themeButton) {
     themeButton.addEventListener("click", () => {
       theme = theme === "light" ? "dark" : "light";
@@ -282,9 +337,13 @@
     });
   }
 
-  // App bar: marks it as scrolled so it can show a shadow.
+  // App bar scroll watcher: marks header with data-scrolled when scrolled down.
   const appBar = $("[data-app-bar]");
 
+  /**
+   * Updates the app bar's 'data-scrolled' attribute based on vertical scroll offset
+   * to toggle shadow/elevation styling.
+   */
   const updateAppBar = () => {
     if (!appBar) {
       return;
@@ -295,14 +354,18 @@
 
   updateAppBar();
 
+  // Listen for scroll events with passive flag for high performance.
   window.addEventListener("scroll", updateAppBar, {
     passive: true
   });
 
-  // Mobile navigation menu.
+  // Mobile navigation drawer controls.
   const menu = $("[data-menu]");
   const menuButton = $("[data-menu-toggle]");
 
+  /**
+   * Closes the mobile navigation drawer and resets ARIA state attributes.
+   */
   const closeMenu = () => {
     if (!menu || !menuButton) {
       return;
@@ -313,6 +376,7 @@
   };
 
   if (menu && menuButton) {
+    // Toggle menu open/closed state on hamburger button click.
     menuButton.addEventListener("click", () => {
       const isOpen =
         menuButton.getAttribute("aria-expanded") === "true";
@@ -321,18 +385,21 @@
       menuButton.setAttribute("aria-expanded", String(!isOpen));
     });
 
+    // Close menu when any navigational link inside the drawer is clicked.
     menu.addEventListener("click", (event) => {
       if (event.target.closest("a")) {
         closeMenu();
       }
     });
 
+    // Close menu when the Escape key is pressed.
     doc.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         closeMenu();
       }
     });
 
+    // Close menu when a click occurs outside the menu and toggle button.
     doc.addEventListener("click", (event) => {
       if (
         menuButton.getAttribute("aria-expanded") === "true" &&
@@ -344,7 +411,7 @@
     });
   }
 
-  // In-page links scroll smoothly unless the visitor prefers reduced motion.
+  // Smooth scroll for internal hash links with reduced-motion accessibility preference check.
   const reduceMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   );
@@ -376,7 +443,7 @@
     });
   });
 
-  // Hides the sticky call to action while the join section is on screen.
+  // Sticky Call to Action (CTA) observer: hides floating CTA when waitlist section is visible.
   const stickyCta = $("[data-sticky-cta]");
   const joinSection = $("#join");
 
@@ -390,7 +457,7 @@
     }).observe(joinSection);
   }
 
-  // Keeps the footer year current.
+  // Footer: populate current calendar year automatically across all footer notices.
   $$("[data-year]").forEach((element) => {
     element.textContent = String(new Date().getFullYear());
   });
@@ -419,6 +486,12 @@
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     const phonePattern = /^(?:\+?51)?9\d{8}$/;
 
+    /**
+     * Normalizes raw contact input and validates whether it matches an email format
+     * or a Peruvian mobile phone format (9 digits, optional +51 prefix).
+     * @param {string} raw - Raw input string from the user.
+     * @returns {{type: 'email'|'phone', value: string}|null} Parsed contact object or null if invalid.
+     */
     const parseContact = (raw) => {
       const value = raw.trim();
 
@@ -441,6 +514,13 @@
       return null;
     };
 
+    /**
+     * Displays or clears a validation error message for a form input field,
+     * toggling container visibility and accessibility attributes.
+     * @param {HTMLElement|null} input - Input element being validated.
+     * @param {HTMLElement|null} container - Error container element.
+     * @param {string} message - Error message text to display, or empty string to clear.
+     */
     const setError = (input, container, message) => {
       if (!input || !container) {
         return;
@@ -465,6 +545,10 @@
       }
     };
 
+    /**
+     * Validates that the visitor has entered their name.
+     * @returns {boolean} True if name is provided, false otherwise.
+     */
     const validateName = () => {
       if (nameInput?.value.trim()) {
         setError(nameInput, nameError, "");
@@ -480,6 +564,10 @@
       return false;
     };
 
+    /**
+     * Validates that the contact field contains a valid email address or mobile phone.
+     * @returns {boolean} True if contact format is valid, false otherwise.
+     */
     const validateContact = () => {
       const value = contactInput?.value.trim() || "";
 
@@ -513,6 +601,10 @@
       return true;
     };
 
+    /**
+     * Validates that the user has accepted the terms and conditions and privacy policy.
+     * @returns {boolean} True if consent checkbox is checked, false otherwise.
+     */
     const validateConsent = () => {
       if (consentInput?.checked) {
         setError(consentInput, consentError, "");
@@ -531,10 +623,12 @@
       return false;
     };
 
+    // Attach inline validation listeners on blur and change events.
     nameInput?.addEventListener("blur", validateName);
     contactInput?.addEventListener("blur", validateContact);
     consentInput?.addEventListener("change", validateConsent);
 
+    // Form submission handler: validates fields, enforces honeypot, and sends data or triggers mailto fallback.
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
@@ -650,5 +744,6 @@
     });
   }
 
+  // Bootstrap initialization: detect user preferred language and initialize page localization.
   setLanguage(getInitialLanguage());
 })();

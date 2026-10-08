@@ -29,6 +29,9 @@
   <script src="./js/app.js" defer></script>
 </head>
 <body data-page="privacy">
+  <!-- ====================================================================== -->
+  <!-- SVG Icons Sprite                                                       -->
+  <!-- ====================================================================== -->
   <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>
@@ -38,6 +41,9 @@
   </svg>
   <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
+  <!-- ====================================================================== -->
+  <!-- Header / Navigation                                                    -->
+  <!-- ====================================================================== -->
   <header class="app-bar" data-app-bar data-scrolled="false">
     <div class="container app-bar__inner">
       <a class="brand" href="./index.html" aria-label="Pozzo">
@@ -79,8 +85,15 @@
       </button>
     </div>
   </header>
+
+  <!-- ====================================================================== -->
+  <!-- Main Content                                                           -->
+  <!-- ====================================================================== -->
   <main id="main" tabindex="-1">
 
+    <!-- ==================================================================== -->
+    <!-- Privacy Policy Article                                               -->
+    <!-- ==================================================================== -->
     <article class="container legal" aria-labelledby="legal-title">
       <h1 id="legal-title" data-i18n="privacy.title">Privacy Policy</h1>
 
@@ -88,51 +101,64 @@
         Last updated: October 1, 2026
       </p>
 
+      <!-- Section 1: Data Controller / Who is responsible -->
       <section class="legal__section" aria-labelledby="privacy-s1">
         <h2 id="privacy-s1" data-i18n="privacy.s1.title">Who is responsible</h2>
         <p data-i18n-template="privacy.s1.text" data-email="hello@kerolabs.example">Kerolabs, a student startup from Peru, is the data controller for the information collected on this site. Contact: hello@kerolabs.example.</p>
       </section>
 
+      <!-- Section 2: Data Collected / What we collect -->
       <section class="legal__section" aria-labelledby="privacy-s2">
         <h2 id="privacy-s2" data-i18n="privacy.s2.title">What we collect</h2>
         <p data-i18n="privacy.s2.text">Only what you type in the waitlist form: your name, an email address or mobile number, and your acceptance of these terms. Sharing it is voluntary. We do not ask for money, ID numbers or payment details.</p>
       </section>
 
+      <!-- Section 3: Purpose of Processing / How we use it -->
       <section class="legal__section" aria-labelledby="privacy-s3">
         <h2 id="privacy-s3" data-i18n="privacy.s3.title">How we use it</h2>
         <p data-i18n="privacy.s3.text">To send you one notice when the Pozzo app is available, and to answer you if you write to us. We do not sell your data or use it for advertising.</p>
       </section>
 
+      <!-- Section 4: Processors & Recipients / Who processes it -->
       <section class="legal__section" aria-labelledby="privacy-s4">
         <h2 id="privacy-s4" data-i18n="privacy.s4.title">Who processes it</h2>
         <p data-i18n="privacy.s4.text">The form data is received by the form provider configured for this site. If no provider is configured, the form opens your email app and the message travels through your own email service to Kerolabs.</p>
       </section>
 
+      <!-- Section 5: Cookies and Local Storage -->
       <section class="legal__section" aria-labelledby="privacy-s5">
         <h2 id="privacy-s5" data-i18n="privacy.s5.title">Cookies and local storage</h2>
         <p data-i18n="privacy.s5.text">This site sets no cookies and has no analytics or tracking. The theme button saves your choice in your browser's local storage. That value stays on your device and is not sent to us or to anyone else.</p>
       </section>
 
+      <!-- Section 6: Data Retention / How long we keep it -->
       <section class="legal__section" aria-labelledby="privacy-s6">
         <h2 id="privacy-s6" data-i18n="privacy.s6.title">How long we keep it</h2>
         <p data-i18n="privacy.s6.text">Until we send the launch notice or until you ask us to delete your data, whichever comes first.</p>
       </section>
 
+      <!-- Section 7: User Rights (ARCO / Ley N.º 29733) -->
       <section class="legal__section" aria-labelledby="privacy-s7">
         <h2 id="privacy-s7" data-i18n="privacy.s7.title">Your rights</h2>
         <p data-i18n-template="privacy.s7.text" data-email="hello@kerolabs.example">Under Peru's Ley N.º 29733 (Ley de Protección de Datos Personales) you can ask to access, correct or delete your data. Write to hello@kerolabs.example and tell us which right you want to use.</p>
       </section>
 
+      <!-- Section 8: Policy Modifications -->
       <section class="legal__section" aria-labelledby="privacy-s8">
         <h2 id="privacy-s8" data-i18n="privacy.s8.title">Changes</h2>
         <p data-i18n="privacy.s8.text">We may update this policy. The date at the top shows the latest version.</p>
       </section>
 
+      <!-- Cross-reference link to Terms and Conditions -->
       <p class="legal__link">
         <a href="./terms.html" data-i18n="footer.terms">Terms and Conditions</a>
       </p>
     </article>
   </main>
+
+  <!-- ====================================================================== -->
+  <!-- Footer Section                                                         -->
+  <!-- ====================================================================== -->
   <footer class="site-footer">
     <div class="container site-footer__grid">
       <div class="site-footer__brand">
