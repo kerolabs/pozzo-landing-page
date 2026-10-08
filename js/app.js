@@ -7,9 +7,11 @@
   const $ = (selector, scope = doc) => scope.querySelector(selector);
   const $$ = (selector, scope = doc) => [...scope.querySelectorAll(selector)];
 
+  // Keys used to remember the visitor's choices between visits.
   const LANG_KEY = "pozzo-lang";
   const THEME_KEY = "pozzo-theme";
 
+  // Supported languages: the dictionary file and the value set on <html lang>.
   const languages = {
     en: {
       file: "./i18n/EN.json",
@@ -24,10 +26,12 @@
   let translations = {};
   let currentLanguage = "en";
 
+  // Returns the translated text for a key, or the fallback when it is missing.
   const t = (key, fallback = "") => {
     return translations[key] ?? fallback;
   };
 
+  // Replaces {placeholders} in a translated string with the given values.
   const interpolate = (text, values = {}) => {
     return text.replace(/\{(\w+)\}/g, (_, key) => {
       return values[key] ?? `{${key}}`;
@@ -246,6 +250,7 @@
       : "light";
   };
 
+  // Theme: saved choice first, then the system preference.
   const themeButton = $("[data-theme-toggle]");
   let theme = getInitialTheme();
 
@@ -277,6 +282,7 @@
     });
   }
 
+  // App bar: marks it as scrolled so it can show a shadow.
   const appBar = $("[data-app-bar]");
 
   const updateAppBar = () => {
@@ -293,6 +299,7 @@
     passive: true
   });
 
+  // Mobile navigation menu.
   const menu = $("[data-menu]");
   const menuButton = $("[data-menu-toggle]");
 
@@ -337,6 +344,7 @@
     });
   }
 
+  // In-page links scroll smoothly unless the visitor prefers reduced motion.
   const reduceMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   );
@@ -368,6 +376,7 @@
     });
   });
 
+  // Hides the sticky call to action while the join section is on screen.
   const stickyCta = $("[data-sticky-cta]");
   const joinSection = $("#join");
 
@@ -381,10 +390,12 @@
     }).observe(joinSection);
   }
 
+  // Keeps the footer year current.
   $$("[data-year]").forEach((element) => {
     element.textContent = String(new Date().getFullYear());
   });
 
+  // Waitlist form: validation and submission.
   const form = $("[data-waitlist]");
 
   if (form) {
