@@ -1,0 +1,2 @@
+# The commit-msg hook is a shell script: with CRLF line endings sh cannot run it on Windows.
+.githooks/* text eol=lf
