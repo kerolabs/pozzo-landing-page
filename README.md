@@ -136,6 +136,10 @@ En cadenas complejas como el consentimiento legal (`join.consent`), el renderiza
 Para colaborar en este proyecto:
 1. Revisa [CONTRIBUTING.md](CONTRIBUTING.md) para conocer las pautas de Pull Request hacia la rama `develop`.
 2. Emplea la especificación **Conventional Commits** (ejemplo: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`).
+   El hook `.githooks/commit-msg` rechaza el mensaje antes de crear el commit si no la cumple. Como el sitio no tiene paso de compilación, actívalo una vez después de clonar:
+   ```bash
+   git config core.hooksPath .githooks
+   ```
 3. Asegúrate de verificar localmente tanto el modo claro como el modo oscuro y ambos idiomas antes de enviar cambios.
 
 ---
