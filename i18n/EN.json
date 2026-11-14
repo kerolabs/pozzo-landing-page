@@ -70,6 +70,10 @@
   "features.history.text": "Each member builds a compliance history from validated payments and can share it when joining a new group, instead of relying on word of mouth.",
   "features.history.alt": "Pozzo screen with a 93 percent on-time rate and a list of the member's groups.",
 
+  "video.title": "See Pozzo in action",
+  "video.intro": "An organizer and two members used Pozzo for the first time: creating the junta, paying with a receipt and delivering the pot.",
+  "video.product.frame": "About-the-Product video of Pozzo",
+
   "team.title": "The team behind Pozzo",
   "team.mission.label": "Our mission",
   "team.mission.text": "To make savings groups easier to run with a simple and reliable digital tool that organizes contributions, turns and receipts, cutting manual work and improving transparency among members.",
@@ -80,6 +84,9 @@
   "team.role.joseph": "Backend development",
   "team.role.jose": "Databases and security",
   "team.role.estefano": "Software development",
+  "team.video.title": "Meet the team",
+  "team.video.intro": "Each of us tells what we built for Pozzo and what we learned along the way.",
+  "team.video.frame": "About-the-Team video of Kerolabs",
 
   "join.title": "Get notified when Pozzo is available",
   "join.text": "Leave your name and an email or mobile number. We will send you one notice when the app is ready, nothing else.",
