@@ -70,6 +70,10 @@
   "features.history.text": "Cada integrante construye su historial de cumplimiento con aportes validados y puede compartirlo al unirse a un grupo nuevo, sin depender de referencias de palabra.",
   "features.history.alt": "Pantalla de Pozzo con un 93 por ciento de puntualidad y una lista de los grupos del integrante.",
 
+  "video.title": "Pozzo en acción",
+  "video.intro": "Una cabeza de junta y dos participantes usaron Pozzo por primera vez: crearon la junta, aportaron con su comprobante y entregaron el pozo.",
+  "video.product.frame": "Video About-the-Product de Pozzo",
+
   "team.title": "El equipo detrás de Pozzo",
   "team.mission.label": "Nuestra misión",
   "team.mission.text": "Facilitar la administración de juntas de ahorro mediante una solución digital simple y confiable que permita organizar aportes, turnos y comprobantes, reduciendo el trabajo manual y mejorando la transparencia entre sus participantes.",
@@ -80,6 +84,9 @@
   "team.role.joseph": "Desarrollo backend",
   "team.role.jose": "Bases de datos y seguridad",
   "team.role.estefano": "Desarrollo de software",
+  "team.video.title": "Conoce al equipo",
+  "team.video.intro": "Cada integrante cuenta qué construyó para Pozzo y qué aprendió en el camino.",
+  "team.video.frame": "Video About-the-Team de Kerolabs",
 
   "join.title": "Avísame cuando Pozzo esté disponible",
   "join.text": "Deja tu nombre y un correo o celular. Te enviaremos un solo aviso cuando la aplicación esté lista, nada más.",

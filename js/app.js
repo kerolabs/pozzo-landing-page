@@ -146,6 +146,15 @@
       }
     });
 
+    $$("[data-i18n-title]").forEach((element) => {
+      const key = element.dataset.i18nTitle;
+      const value = translations[key];
+
+      if (typeof value === "string") {
+        element.title = value;
+      }
+    });
+
     $$("[data-i18n-template]").forEach((element) => {
       const key = element.dataset.i18nTemplate;
       const value = translations[key];
