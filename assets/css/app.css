@@ -692,9 +692,9 @@ h3 { font-size: 1.375rem; line-height: 1.75rem; font-weight: 600; letter-spacing
 .mission__label { margin-bottom: 8px; font-size: 0.75rem; line-height: 1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .mission__text { font-weight: 500; }
 .team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
-/* Embedded YouTube videos: a 16:9 frame that fills its column up to 56rem. */
-.video-block { display: grid; gap: 8px; max-width: 56rem; margin-inline: auto; }
-.video-block--team { margin-top: 48px; }
+/* Embedded YouTube videos: a 16:9 frame up to 56rem wide, aligned with the section heading. */
+.video-block { display: grid; gap: 8px; max-width: 56rem; }
+.video-block--team { margin: 48px auto 0; }
 .video-block__title { font-size: 1.375rem; line-height: 1.75rem; font-weight: 700; }
 .video-block__intro { margin-bottom: 8px; color: var(--md-on-surface-variant); }
 .video-frame { aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--md-outline-variant); border-radius: var(--shape-lg); background: #000; }
