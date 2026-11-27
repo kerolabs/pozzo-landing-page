@@ -227,6 +227,8 @@
           ? t("nav.theme.dark", "Theme: dark")
           : t("nav.theme.light", "Theme: light")
       );
+      // The same label shows as a tooltip, so the icon is not the only clue of what the button does.
+      themeButton.title = themeButton.getAttribute("aria-label");
     }
   };
 
@@ -329,6 +331,8 @@
           ? t("nav.theme.dark", "Theme: dark")
           : t("nav.theme.light", "Theme: light")
       );
+      // The same label shows as a tooltip, so the icon is not the only clue of what the button does.
+      themeButton.title = themeButton.getAttribute("aria-label");
     }
 
     try {
